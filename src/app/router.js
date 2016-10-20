@@ -6,11 +6,13 @@ import map from 'lodash/fp/map';
 import pathMatch from 'path-match';
 import {NAVIGATE} from '@coorpacademy/redux-history';
 import createDiscussionView from './views/discussion';
+import {fetchDiscussionAction} from './actions/fetch-discussion-api';
 
 export const createRoutes = options => [{
   path: '/',
   view: createDiscussionView(options),
   actions: [
+    fetchDiscussionAction(options)
   ]
 }];
 

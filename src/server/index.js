@@ -9,7 +9,14 @@ const addRoot = app => {
   return app.get('/', (req, res) => {
     res.send(`
       <div id="forum"></div>
-      <script async type="text/javascript" src="/dist/forum.js"></script>
+      <script type="text/javascript" src="/dist/forum.js"></script>
+      <script>
+        Forum.create({
+          container: document.getElementById('forum'),
+          channel: 'frcoorpacademy/discipline/06/module/6.B',
+          api: 'http://localhost:3000/api/v1'
+        });
+      </script>
     `);
   });
 };

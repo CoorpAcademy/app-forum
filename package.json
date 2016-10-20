@@ -1,5 +1,5 @@
 {
-  "name": "app-forum",
+  "name": "@coorpacademy/app-forum",
   "version": "0.0.0",
   "description": "CoorpAcademy forum",
   "main": "lib/index.js",

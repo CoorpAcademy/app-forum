@@ -27,7 +27,7 @@ module.exports = {
   entry: {
     forum: addHMR([
       'babel-polyfill',
-      path.join(__dirname, 'src/app/bundle')
+      path.join(__dirname, 'src/app')
     ])
   },
   output: {

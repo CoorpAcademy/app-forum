@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import {historyReducer} from '@coorpacademy/redux-history';
-// import api from './api';
+import api from './api';
 // import ui from './ui';
 
 const route = (state, action) => {
@@ -8,7 +8,7 @@ const route = (state, action) => {
 };
 
 export default ({lang} = {}) => combineReducers({
-  // api,
+  api,
   // ui,
   route
 });

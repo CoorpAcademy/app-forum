@@ -5,7 +5,7 @@ import {createDiscussion} from '@coorpacademy/components';
 const createMapStateToProps = ({dispatch, api}) => ({state, params}) => {
   return {
     title: 'Sandbox forum',
-    threads: []
+    threads: state.api.threads || []
   };
 };
 

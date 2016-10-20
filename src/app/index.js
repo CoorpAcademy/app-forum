@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import get from 'lodash/fp/get';
 import {render} from '@coorpacademy/treantjs-engine-virtual-dom';
 import {connectHistory, navigate} from '@coorpacademy/redux-history';
@@ -43,7 +43,7 @@ const createRenderer = (store, history, update, _createRouter, options) => {
   }
 };
 
-export default options => {
+module.exports.create = options => {
   const history = createHistory();
 
   const store = createStore(
