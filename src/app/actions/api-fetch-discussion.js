@@ -5,13 +5,10 @@ export const DISCUSSION_FETCH_REQUEST = '@@discussion/FETCH_REQUEST';
 export const DISCUSSION_FETCH_SUCCESS = '@@discussion/FETCH_SUCCESS';
 export const DISCUSSION_FETCH_FAILURE = '@@discussion/FETCH_FAILURE';
 
-export const fetchDiscussionAction = curry(({api, channel}, dispatch, {id, host}) => {
+export const fetchDiscussionAction = curry(({api, channel}, dispatch) => {
   const endpoint = `${api}/forums/${encodeURIComponent(channel)}/discussions`;
+  const meta = {channel};
 
-  const meta = {
-    id,
-    key: 'domain'
-  };
   return dispatch({
     [RSAA]: {
       endpoint,

@@ -1,8 +1,8 @@
 import includes from 'lodash/fp/includes';
 import set from 'lodash/fp/set';
 import {combineReducers} from 'redux';
-import {DISCUSSION_FETCH_SUCCESS} from '../actions/fetch-discussion-api';
-import {CREATE_THREAD_SUCCESS} from '../actions/create-thread-api';
+import {DISCUSSION_FETCH_SUCCESS} from '../actions/api-fetch-discussion';
+import {CREATE_THREAD_SUCCESS} from '../actions/api-create-thread';
 
 const discussions = (state = {}, action) => {
   if (includes(action.type, [DISCUSSION_FETCH_SUCCESS])) {

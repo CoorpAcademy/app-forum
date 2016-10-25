@@ -5,11 +5,9 @@ export const CREATE_THREAD_REQUEST = '@@thread/CREATE_REQUEST';
 export const CREATE_THREAD_SUCCESS = '@@thread/CREATE_SUCCESS';
 export const CREATE_THREAD_FAILURE = '@@thread/CREATE_FAILURE';
 
-export const createThreadAction = curry(({api, thread}, dispatch, {id, host}) => {
+export const createThreadAction = curry(({api, channel}, dispatch, thread) => {
   const endpoint = `${api}/forums`;
-  const meta = {
-    channel: thread.channel
-  };
+  const meta = {channel};
   return dispatch({
     [RSAA]: {
       endpoint,
