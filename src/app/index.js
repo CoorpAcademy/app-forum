@@ -1,4 +1,4 @@
-import {applyMiddleware, createStore} from 'redux';
+import {createStore} from 'redux';
 import get from 'lodash/fp/get';
 import {render} from '@coorpacademy/treantjs-engine-virtual-dom';
 import {connectHistory, navigate} from '@coorpacademy/redux-history';

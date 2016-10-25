@@ -1,6 +1,8 @@
+import getOr from 'lodash/fp/getOr';
 import pipe from 'lodash/fp/pipe';
 import * as treant from '@coorpacademy/treantjs-core';
 import {createDiscussion} from '@coorpacademy/components';
+import {createUpdatePostAction} from '../actions/ui-update-post';
 // import {createThreadAction} from '../actions/create-thread-api';
 
 function refreshStatus(thread) {
@@ -53,14 +55,20 @@ const createThreadActions = channel => thread => {
   // thread.answers.forEach(createThreadActions(channel));
 };
 
-const createMapStateToProps = ({channel}) => ({state, params}) => {
+const createMapStateToProps = ({dispatch, channel}) => ({state, params}) => {
+  const updatePostAction = createUpdatePostAction(dispatch);
   const threads = state.api.discussions.threads || [];
   threads.forEach(createThreadActions(channel));
 
   return {
     title: 'Sandbox forum',
     threads,
-    onPost: () => console.log('plop on ', channel)
+    value: getOr('', 'ui.discussion.postUpdated.value', state),
+    postDisabled: getOr(true, 'ui.discussion.postUpdated.postDisabled', state),
+    onPost: () => console.log('plop on ', channel),
+    onChange: event => {
+      updatePostAction(event.target.value);
+    }
   };
 };
 
