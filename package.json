@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "CoorpAcademy forum",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoorpAcademy/app-forum"
+  },
   "scripts": {
     "build": "webpack",
     "server": "node src/sandbox/index.js",
@@ -23,6 +27,7 @@
     "webpack": "^2.1.0-beta.25"
   },
   "dependencies": {
+    "@coorpacademy/appster": "0.0.2",
     "@coorpacademy/components": "3.2.0",
     "@coorpacademy/treantjs-core": "3.0.3",
     "lodash": "^4.15.0",
