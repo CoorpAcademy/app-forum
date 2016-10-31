@@ -14,7 +14,7 @@ export const createThreadAction = curry(({api, channel}, dispatch, thread) => {
       method: 'POST',
       credentials: 'include',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json;charset=UTF-8'
       },
       body: JSON.stringify(thread),
       types: [{
