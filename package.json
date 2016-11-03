@@ -23,17 +23,14 @@
     "ava": "^0.16.0",
     "coveralls": "^2.11.13",
     "eslint": "^3.5.0",
-    "nyc": "^8.3.0",
-    "webpack": "^2.1.0-beta.25"
+    "nyc": "^8.3.0"
   },
   "dependencies": {
     "@coorpacademy/appster": "0.0.3",
     "@coorpacademy/components": "3.2.0",
     "@coorpacademy/treantjs-core": "3.0.3",
     "lodash": "^4.15.0",
-    "redux": "^3.6.0",
-    "redux-api-middleware": "^2.0.0-beta.1",
-    "webpack": "^2.1.0-beta.25"
+    "redux-api-middleware": "^2.0.0-beta.1"
   },
   "ava": {
     "files": [
