@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/CoorpAcademy/app-forum#readme",
   "devDependencies": {
-    "@coorpacademy/eslint-plugin-coorpacademy": "^2.0.0",
+    "@coorpacademy/eslint-plugin-coorpacademy": "^3.0.0",
     "ava": "^0.16.0",
     "coveralls": "^2.11.13",
     "eslint": "^3.5.0",
