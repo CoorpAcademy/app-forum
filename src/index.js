@@ -1,4 +1,4 @@
-import prepareApp from '@coorpacademy/appster/src/app';
+import prepareApp from '@coorpacademy/appster';
 import createReducer from './reducers';
 import createRoutes from './routes';
 
