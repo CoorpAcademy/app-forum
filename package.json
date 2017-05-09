@@ -2,7 +2,7 @@
   "name": "@coorpacademy/app-forum",
   "version": "0.0.2",
   "description": "CoorpAcademy forum",
-  "main": "lib/index.js",
+  "module": "es/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/CoorpAcademy/app-forum"
