@@ -2,8 +2,4 @@
 
 Coorpacademy forum
 
-### Old fashion
-- `npm install`
-- `npm start`
-- open `http://localhost:3006`
-- run tests `npm test`
+Use app-sandbox to test this stone

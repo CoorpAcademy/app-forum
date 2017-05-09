@@ -1,8 +1,7 @@
 const path = require('path');
-const config = require('@coorpacademy/appster/webpack.config');
+const {webpackConfig} = require('@coorpacademy/components-bundler').default;
 
 const input = path.join(__dirname, 'src/app');
 const output = path.join(__dirname, 'dist');
 
-module.exports = config('Forum', input, output);
-
+module.exports = webpackConfig('Forum', input, output);

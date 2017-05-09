@@ -7,29 +7,37 @@
     "type": "git",
     "url": "https://github.com/CoorpAcademy/app-forum"
   },
+  "files": [
+    "es",
+    "README.md"
+  ],
   "scripts": {
-    "build": "webpack",
-    "server": "node src/sandbox/index.js",
-    "start": "npm run server",
-    "test": "npm run lint && npm run nyc",
-    "lint": "eslint src/ *.js *.json --ext .js,.json",
     "ava": "BABEL_ENV=test ava",
+    "build": "cross-env babel src --out-dir es -s --ignore test --copy-files",
+    "clean": "rimraf es; rimraf coverage; rimraf .nyc_output",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/ *.js *.json --ext .js,.json",
     "nyc": "BABEL_ENV=test nyc npm run ava",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "test": "npm run lint && npm run nyc"
   },
   "homepage": "https://github.com/CoorpAcademy/app-forum#readme",
   "devDependencies": {
     "@coorpacademy/eslint-plugin-coorpacademy": "^2.0.0",
     "ava": "^0.16.0",
     "coveralls": "^2.11.13",
+    "cross-env": "^4.0.0",
     "eslint": "^3.5.0",
     "nyc": "^8.3.0",
     "webpack": "^2.1.0-beta.25"
   },
   "dependencies": {
-    "@coorpacademy/appster": "0.0.3",
-    "@coorpacademy/components": "3.2.0",
-    "@coorpacademy/treantjs-core": "3.0.3",
+    "@coorpacademy/appster": "3.7.6",
+    "@coorpacademy/components": "5.1.8",
+    "@coorpacademy/components-bundler": "5.1.8",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
     "lodash": "^4.15.0",
     "redux": "^3.6.0",
     "redux-api-middleware": "^2.0.0-beta.1",
@@ -37,6 +45,7 @@
   },
   "ava": {
     "files": [
+      "test/**/*.js",
       "src/**/test/**/*.js",
       "!node_module/**/*"
     ],
