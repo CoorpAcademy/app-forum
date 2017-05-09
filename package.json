@@ -1,6 +1,6 @@
 {
   "name": "@coorpacademy/app-forum",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CoorpAcademy forum",
   "module": "es/index.js",
   "repository": {
